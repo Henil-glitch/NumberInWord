@@ -1,0 +1,134 @@
+public class NumberToWords {
+    public static void numberToWords(int number) {
+        int rn = reverse(number);
+        int reversen = reverse(number);
+        int digit = 0;
+        if (rn > 0) {
+            if (getDigitCount(rn)==getDigitCount(number)) {
+                while (rn != 0) {
+                        digit = rn % 10;
+
+                        if (digit == 0){
+                            System.out.println("Zero");
+                        }else if (digit == 1) {
+                            System.out.println("One");
+
+                        } else if (digit == 2) {
+                            System.out.println("Two");
+
+                        } else if (digit == 3) {
+                            System.out.println("Three");
+
+                        } else if (digit == 4) {
+                            System.out.println("Four");
+
+                        } else if (digit == 5) {
+                            System.out.println("Five");
+
+                        } else if (digit == 6) {
+                            System.out.println("Six");
+
+                        } else if (digit == 7) {
+                            System.out.println("Seven");
+
+                        } else if (digit == 8) {
+                            System.out.println("Eight");
+
+                        } else if (digit == 9) {
+                            System.out.println("Nine");
+
+                        } else {
+                            System.out.println("Invalid value");
+                        }
+                        rn = rn/10;
+                }
+            }else{
+                while (rn != 0) {
+                    digit = rn % 10;
+
+                    if (digit == 0){
+                        System.out.println("Zero");
+
+                    }else if (digit == 1) {
+                        System.out.println("One");
+
+                    } else if (digit == 2) {
+                        System.out.println("Two");
+
+                    } else if (digit == 3) {
+                        System.out.println("Three");
+
+                    } else if (digit == 4) {
+                        System.out.println("Four");
+
+                    } else if (digit == 5) {
+                        System.out.println("Five");
+
+                    } else if (digit == 6) {
+                        System.out.println("Six");
+
+                    } else if (digit == 7) {
+                        System.out.println("Seven");
+
+                    } else if (digit == 8) {
+                        System.out.println("Eight");
+
+                    } else if (digit == 9) {
+                        System.out.println("Nine");
+
+                    } else {
+                        System.out.println("Invalid value");
+                    }
+                    rn = rn/10;
+                }
+
+                for (int i = getDigitCount(reversen); i < getDigitCount(number);i++){
+                System.out.println("Zero");
+                }
+            }
+
+        }else if (rn == 0){
+            System.out.println("Zero");
+        }else {
+            System.out.println("Invalid Value");
+        }
+    }
+
+    public static int getDigitCount(int number) {
+        int digitCount = 0;
+        int digit = 0;
+        if (number > 0) {
+            while (number > 0) {
+                if (number != 0) {
+                    digit = number % 10;
+                    number /= 10;
+                }else if (number == 0){
+                    digitCount = number;
+                }else {
+                    return -1;
+                }
+                digitCount++;
+            }
+        }else if (number == 0){
+            digitCount = 1;
+        }else {
+            return -1;
+        }
+        return digitCount;
+    }
+
+    public static int reverse (int number) {
+        int reverse = 0;
+        int lastDigit = 0;
+        if (number == 0){
+            return number;
+        }else{
+            while (number > 0 || number < 0){
+                lastDigit = number % 10;
+                reverse = (reverse * 10) + lastDigit;
+                number/=10;
+            }
+            return reverse;
+        }
+    }
+}
